@@ -7,16 +7,12 @@ Gem::Specification.new do |s|
   s.version     = ShellSpinner::VERSION
   s.authors     = ["Ivan Garmatenko"]
   s.email       = %w(cheef.che@gmail.ru)
-  s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
-
-  s.rubyforge_project = "shell-spinner"
+  s.homepage    = "https://github.com/cheef/shell-spinner"
+  s.summary     = %q{Animated spinner for shell}
+  s.description = %q{Gem provides animated spinner for UNIX shell and could be used with rake tasks and any console scripts}
 
   s.files         = `git ls-files`.split("\n")
-  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
-  s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
-  s.require_paths = ["lib"]
+  s.require_paths = %w(lib)
 
   s.add_runtime_dependency "colorize"
 end

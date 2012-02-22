@@ -19,7 +19,7 @@ module ShellSpinner
         print "done\n".colorize(:green) unless text.nil?
       rescue Exception => e
         print "fail\n".colorize(:red) unless text.nil?
-        raise e
+        re_raise_exception e
       end
     end
 
@@ -36,6 +36,14 @@ module ShellSpinner
       end
 
       thread.join
+    end
+
+    def self.re_raise_exception e
+      raise begin
+        e.class.new(e.message).tap do |exception|
+          exception.set_backtrace e.backtrace
+        end
+      end
     end
 end
 
