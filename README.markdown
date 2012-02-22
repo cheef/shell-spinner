@@ -6,6 +6,10 @@ It basically wraps any code and show spinner until code isn't completed.
 ## Installation
 
     gem install shell-spinner
+    
+In **Rails 3**, add this to your Gemfile and run the ```bundle``` command.
+    
+    gem "shell-spinner"
 
 ## Usage
 
@@ -36,3 +40,5 @@ This code produces output similar to:
     > Positive result... done
     > Code with exception... fail
     > <exception message and backtrace>
+    
+I can't show you a spinner there, but promise - it appears :)
