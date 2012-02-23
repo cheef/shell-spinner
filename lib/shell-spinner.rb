@@ -40,9 +40,9 @@ module ShellSpinner
 
     def self.re_raise_exception e
       raise begin
-        e.class.new(e.message).tap do |exception|
-          exception.set_backtrace e.backtrace
-        end
+        new_exception = e.class.new(e.message)
+        new_exception.set_backtrace e.backtrace
+        new_exception
       end
     end
 end
