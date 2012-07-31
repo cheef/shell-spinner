@@ -40,10 +40,17 @@ module ShellSpinner
 
     def self.re_raise_exception e
       raise begin
-        new_exception = e.class.new(e.message)
+        new_exception = build_new_exception(e)
         new_exception.set_backtrace e.backtrace
         new_exception
       end
+    end
+
+    # Needs for cases when custom exceptions needs a several required arguments
+    def self.build_new_exception e
+      e.class.new(e.message)
+    rescue
+      Exception.new e.message
     end
 end
 
