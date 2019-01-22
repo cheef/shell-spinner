@@ -24,16 +24,16 @@ module ShellSpinner
       end
 
       def with_message text = nil
-        require 'colorize'
+        require 'rainbow'
 
         begin
           print "#{text}... " unless text.nil?
           catch_user_output { yield }
-          print "done\n".colorize(:green) unless text.nil?
-          print user_output.colorize(:blue)
+          print Rainbow("done\n").green unless text.nil?
+          print Rainbow(user_output).blue
         rescue Exception => e
-          print "fail\n".colorize(:red) unless text.nil?
-          print user_output.colorize(:blue)
+          print Rainbow("fail\n").red unless text.nil?
+          print Rainbow(user_output).blue
           re_raise_exception e
         end
       end

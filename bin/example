@@ -1,0 +1,30 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "shell-spinner"
+
+
+puts "Example 1: With message"
+# With message
+ShellSpinner "Positive result" do
+  puts "Text within block is blue"
+  sleep 1
+end
+
+puts "\nExample 2: Without message"
+# Spinner without message
+ShellSpinner do
+  puts
+  sleep 1
+end
+
+puts "\nExample 3: With exception"
+# With exception
+begin
+  ShellSpinner "Code with exception" do
+    sleep 2
+    raise "Some exception"
+  end
+rescue RuntimeError
+  nil
+end

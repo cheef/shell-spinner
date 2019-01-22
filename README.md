@@ -42,3 +42,7 @@ This code produces output similar to:
     > <exception message and backtrace>
     
 I can't show you a spinner there, but promise - it appears :)
+
+## Example
+
+To see an example of the code in action you can execute `bin/example` from your terminal.
