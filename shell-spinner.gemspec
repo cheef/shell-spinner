@@ -8,11 +8,12 @@ Gem::Specification.new do |s|
   s.authors       = ["Ivan Garmatenko"]
   s.email         = %w(cheef.che@gmail.ru)
   s.homepage      = "https://github.com/cheef/shell-spinner"
+  s.license       = "MIT"
   s.summary       = %q{Animated spinner for shell}
   s.description   = %q{Gem provides animated spinner for UNIX shell and could be used with rake tasks and any console scripts}
 
-  s.files         = Dir['README.md', 'lib/**/*']
+  s.files         = Dir["README.md", "lib/**/*"]
   s.require_paths = %w(lib)
 
-  s.add_runtime_dependency "colorize"
+  s.add_runtime_dependency "rainbow"
 end
